@@ -85,7 +85,7 @@ jobs:
         run: ls -R
 
       - name: Strip Lua comments
-        run: find data -name "*.lua" -exec python3 .github/scripts/strip_lua.py {} \;
+        run: find data/x64/scripts -name "*.lua" -not -path "*/config/*" -exec python3 .github/scripts/strip_lua.py {} \;
 
       - name: Install 7zip
         run: sudo apt-get install -y p7zip-full
