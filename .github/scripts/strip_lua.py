@@ -75,7 +75,7 @@ def strip_lua(src):
     return result.strip() + '\n'
 
 path = sys.argv[1]
-with open(path, 'r', encoding='utf-8') as fh:
+with open(path, 'r', encoding='utf-8', newline='') as fh:
     src = fh.read()
-with open(path, 'w', encoding='utf-8') as fh:
+with open(path, 'w', encoding='utf-8', newline='\r\n') as fh:
     fh.write(strip_lua(src))
